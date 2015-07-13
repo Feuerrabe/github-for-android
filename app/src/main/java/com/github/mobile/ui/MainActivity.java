@@ -34,7 +34,7 @@ import java.util.List;
 
 import org.eclipse.egit.github.core.User;
 
-import io.repro.android.Repro.Repro;
+import io.repro.android.Repro;
 
 public class MainActivity extends BaseActivity implements NavigationDrawerFragment.NavigationDrawerCallbacks,
     LoaderManager.LoaderCallbacks<List<User>> {
@@ -69,6 +69,7 @@ public class MainActivity extends BaseActivity implements NavigationDrawerFragme
         mNavigationDrawerFragment = (NavigationDrawerFragment)
             getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
 
+        Repro.setLogLevel(io.repro.android.Log.Level.VERBOSE);
         Repro.setup("YOUR_APP_TOKEN");
         Repro.startRecording();
     }
